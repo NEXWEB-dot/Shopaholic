@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="SHOPAHOLIC — Fashion Jewelry. Shop our curated collection of rings, necklaces, earrings and bracelets. Free shipping across Pakistan on orders over Rs. 10,000." name="description"/>
+<meta content="index, follow" name="robots"/>
+<meta content="SHOPAHOLIC — Fashion Jewelry" property="og:title"/>
+<meta content="Shop our curated collection of fashion jewelry." property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>SHOPAHOLIC — Fashion Jewelry</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<script defer src="assets/js/home.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<style>
+  :root {
+    --pink: #F055B2;
+    --pink-light: #fdeaf6;
+    --pink-mid: #f58bd0;
+  }
+  /* Override accent to pink */
+  .text-accent { color: var(--pink) !important; }
+  .bg-accent { background-color: var(--pink) !important; }
+  .border-accent { border-color: var(--pink) !important; }
+  .hover\:text-accent:hover { color: var(--pink) !important; }
+  .hover\:bg-accent:hover { background-color: var(--pink) !important; }
+  .hover\:border-accent:hover { border-color: var(--pink) !important; }
+  .group:hover .group-hover\:text-accent { color: var(--pink) !important; }
+  .group:hover .group-hover\:border-accent { border-color: var(--pink) !important; }
+
+
+  /* Pink CTA button */
+  .btn-pink {
+    background-color: var(--pink);
+    color: #fff;
+    border: 2px solid var(--pink);
+    transition: background .2s, color .2s;
+  }
+  .btn-pink:hover {
+    background-color: #fff;
+    color: var(--pink);
+  }
+  .btn-outline-pink {
+    background-color: #fff;
+    color: var(--pink);
+    border: 2px solid var(--pink);
+    transition: background .2s, color .2s;
+  }
+  .btn-outline-pink:hover {
+    background-color: var(--pink);
+    color: #fff;
+  }
+
+  /* Hero "Shop Now" */
+  .hero-cta {
+    display: inline-block;
+    background: #fff;
+    color: #111;
+    padding: 12px 36px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    border: 2px solid #fff;
+    transition: background .22s, color .22s, border-color .22s;
+  }
+  .hero-cta:hover {
+    background: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+  }
+
+  /* Marquee pink highlight */
+  .marquee-pink { color: var(--pink); }
+
+  /* Section accent line */
+  .section-accent-line {
+    display: inline-block;
+    width: 44px; height: 3px;
+    background: var(--pink);
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  /* Info bar icon pink on hover */
+  .info-item:hover .info-icon { color: var(--pink); }
+  .info-item:hover span { color: var(--pink); }
+
+  /* Category bar active */
+  a.cat-bar-link:hover span, a.cat-bar-link:focus span { color: var(--pink); }
+
+  /* Reviews featured card top border */
+  .review-featured { border-top: 4px solid var(--pink); }
+
+  /* Footer newsletter subscribe button */
+  .footer-subscribe { background: var(--pink); color: #fff; border: none; }
+  .footer-subscribe:hover { background: #d63f9a; }
+
+  /* Back to top */
+  #back-to-top:hover { background: var(--pink) !important; }
+
+  /* Trendy grid card hover text */
+  .trendy-card:hover h4 { color: var(--pink); }
+
+  /* Shopaholic: white footer, black text */
+  .site-footer .text-gray-400, .site-footer .text-gray-500 { color:#555 !important; }
+  .site-footer .hover\:text-white:hover { color:var(--pink) !important; }
+  .site-footer .border-gray-700, .site-footer .border-gray-800 { border-color:#e5e7eb !important; }
+  .site-footer input { color:#111 !important; }
+  .site-footer input::placeholder { color:#999 !important; }
+  .site-footer input:focus { border-color:var(--pink) !important; }
+  .site-footer .hover\:bg-accent:hover { color:#fff !important; }
+  .site-footer .text-white { color:#111 !important; }
+  .shopaholic-logo-img { height:52px; width:auto; object-fit:contain; }
+  @media (max-width:640px){ .shopaholic-logo-img{ height:40px; } }
+
+  /* ===== Hero: poster-style product images, shown whole (no zoom/crop) ===== */
+  #heroCarousel { background:#fdf2f8 !important; }
+  #heroCarousel .hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(36px) saturate(1.1); transform:scale(1.25); opacity:.6; }
+  #heroCarousel .hero-wash { position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.78) 45%,rgba(255,255,255,.15) 100%); }
+  #heroCarousel .hero-fg { position:absolute; right:7%; top:32px; bottom:32px; width:46%; height:calc(100% - 64px); object-fit:contain; object-position:center; filter:drop-shadow(0 18px 30px rgba(0,0,0,.18)); }
+  #heroCarousel .max-w-lg, #heroCarousel .max-w-lg *:not(.hero-cta):not(.section-accent-line) { color:#111 !important; text-shadow:none !important; filter:none !important; }
+  #heroCarousel .max-w-lg h3 { color:#777 !important; }
+  #heroCarousel .hero-cta { background:#111; color:#fff !important; border-color:#111; }
+  #heroCarousel .hero-cta:hover { background:var(--pink); border-color:var(--pink); }
+  #heroCarousel .hero-counter-current, #heroCarousel .hero-counter-total { color:#111; }
+  #heroCarousel [class*="bg-white/50"] { background:rgba(0,0,0,.3) !important; }
+  #heroCarousel .hero-prev, #heroCarousel .hero-next { color:#111 !important; border-color:rgba(0,0,0,.3) !important; background:rgba(255,255,255,.7); }
+  #heroCarousel .hero-prev:hover, #heroCarousel .hero-next:hover { background:var(--pink); border-color:var(--pink) !important; color:#fff !important; }
+  .hero-thumb.active { border-color: var(--pink) !important; }
+  @media (max-width: 1023px) {
+    #heroCarousel .hero-wash { background:linear-gradient(180deg,rgba(255,255,255,.2) 0%,rgba(255,255,255,.55) 45%,rgba(255,255,255,.97) 72%); }
+    #heroCarousel .hero-fg { left:0; right:0; top:60px; bottom:230px; width:100%; height:calc(100% - 290px); }
+  }
+</style>
+</head>
+<body class="bg-white text-primary font-sans antialiased overflow-x-hidden">
+
+<!-- Top Bar -->
+<div class="w-full bg-white border-b border-gray-100 py-2 px-4 sm:px-8 text-[10px] sm:text-[11px] font-medium text-gray-500 flex justify-between items-center flex-wrap gap-y-2">
+  <div class="flex items-center space-x-4 hidden sm:flex">
+    <a class="hover:text-pink-500 transition-colors" href="#" style="color:inherit"><i class="fab fa-facebook-f"></i></a>
+    <a class="hover:text-pink-500 transition-colors" href="#" style="color:inherit"><i class="fab fa-instagram"></i></a>
+    <a class="hover:text-pink-500 transition-colors" href="#" style="color:inherit"><i class="fab fa-tiktok"></i></a>
+  </div>
+  <div class="text-center flex-grow text-xs tracking-wider font-semibold">
+    <span>FREE SHIPPING OVER Rs. 10,000 &amp; FREE RETURNS</span>
+  </div>
+  <div class="flex items-center space-x-4">
+    <select class="bg-transparent border-none outline-none cursor-pointer">
+      <option>PKR</option>
+      <option>USD</option>
+    </select>
+    <span class="text-gray-300">|</span>
+    <select class="bg-transparent border-none outline-none cursor-pointer">
+      <option>ENG</option>
+    </select>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w-full bg-white px-4 sm:px-8 py-3 md:py-4 flex justify-between items-center sticky top-0 z-50 shadow-sm border-b border-gray-100">
+  <button aria-label="Open menu" class="lg:hidden text-gray-700 hover:text-gray-900 text-xl transition-colors" id="mobile-menu-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+  <!-- Logo -->
+  <a class="flex-grow lg:flex-grow-0 flex items-center justify-center lg:justify-start text-decoration-none" href="index.html">
+    <img alt="Shopaholic" class="shopaholic-logo-img" src="images/logo.png"/><span class="font-serif font-bold tracking-widest text-black text-xl sm:text-2xl ml-2 hidden sm:inline" style="font-family:'Playfair Display',serif; letter-spacing:0.18em;">SHOPAHOLIC</span>
+  </a>
+  <nav class="hidden lg:flex space-x-6 xl:space-x-8 text-[10px] font-bold tracking-widest uppercase">
+    <a class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-0.5" href="index.html">HOME</a>
+    <a class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-0.5" href="shop.html?cat=rings">RINGS</a>
+    <a class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-0.5" href="shop.html?cat=necklaces">NECKLACES</a>
+    <a class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-0.5" href="shop.html?cat=earrings">EARRINGS</a>
+    <a class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-0.5" href="shop.html?cat=bracelets">BRACELETS</a>
+    <a class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-0.5" href="#">CONTACT</a>
+  </nav>
+  <div class="flex items-center space-x-5 text-lg">
+    <button class="hover:text-accent transition-colors hidden sm:block"><i class="far fa-user"></i></button>
+    <button class="hover:text-accent transition-colors hidden sm:block"><i class="far fa-heart"></i></button>
+    <button class="hover:text-accent transition-colors relative" onclick="window.location.href='checkout.html'">
+      <i class="fas fa-shopping-bag"></i>
+      <span class="absolute -top-1.5 -right-2 bg-accent text-white text-[10px] w-[18px] h-[18px] flex items-center justify-center rounded-full font-bold cart-counter-badge">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay fixed inset-0 bg-black/50 z-[60] backdrop-blur-sm" id="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
+<!-- Mobile Menu Panel -->
+<div class="mobile-menu-panel fixed top-0 left-0 h-full w-[280px] max-w-[80vw] bg-white z-[70] shadow-2xl overflow-y-auto" id="mobile-menu-panel">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+    <span class="flex items-center gap-2"><img alt="Shopaholic" class="shopaholic-logo-img" src="images/logo.png" style="height:36px"/><span class="font-serif font-bold tracking-widest text-black text-lg" style="letter-spacing:0.15em;">SHOPAHOLIC</span></span>    <button aria-label="Close menu" class="w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors" onclick="closeMobileMenu()">
+      <i class="fas fa-times text-sm"></i>
+    </button>
+  </div>
+  <nav class="flex flex-col px-6 py-4 space-y-1 overflow-y-auto">
+    <a class="py-2.5 text-sm font-bold uppercase tracking-widest border-b border-gray-100 hover:text-accent transition-colors" href="index.html">Home</a>
+    <a class="py-2.5 text-sm font-bold uppercase tracking-widest border-b border-gray-100 hover:text-accent transition-colors" href="shop.html?cat=rings">Rings</a>
+    <a class="py-2.5 text-sm font-bold uppercase tracking-widest border-b border-gray-100 hover:text-accent transition-colors" href="shop.html?cat=necklaces">Necklaces</a>
+    <a class="py-2.5 text-sm font-bold uppercase tracking-widest border-b border-gray-100 hover:text-accent transition-colors" href="shop.html?cat=earrings">Earrings</a>
+    <a class="py-2.5 text-sm font-bold uppercase tracking-widest border-b border-gray-100 hover:text-accent transition-colors" href="shop.html?cat=bracelets">Bracelets</a>
+    <a class="py-2.5 text-sm font-bold uppercase tracking-widest border-b border-gray-100 hover:text-accent transition-colors" href="#">Contact</a>
+  </nav>
+  <div class="px-6 pb-6 flex items-center space-x-5 text-lg text-gray-500">
+    <a class="hover:text-accent transition-colors" href="#"><i class="fab fa-facebook-f"></i></a>
+    <a class="hover:text-accent transition-colors" href="#"><i class="fab fa-instagram"></i></a>
+    <a class="hover:text-accent transition-colors" href="#"><i class="fab fa-tiktok"></i></a>
+  </div>
+</div>
+
+<!-- Hero Carousel -->
+<section class="hero-carousel relative w-full h-[560px] sm:h-[640px] md:h-[780px] overflow-hidden bg-black" id="heroCarousel">
+  <!-- Slides -->
+  <div class="hero-slides absolute inset-0 w-full h-full">
+    <div class="hero-slide active absolute inset-0 w-full h-full" data-index="0">
+      <img alt="" aria-hidden="true" class="hero-bg" src="images/7.webp"/>
+      <div class="hero-wash"></div>
+      <img alt="SHOPAHOLIC jewelry collection" class="hero-slide-img hero-fg" src="images/7.webp"/>
+    </div>
+    <div class="hero-slide absolute inset-0 w-full h-full" data-index="1">
+      <img alt="" aria-hidden="true" class="hero-bg" src="images/1.webp"/>
+      <div class="hero-wash"></div>
+      <img alt="SHOPAHOLIC jewelry" class="hero-slide-img hero-fg" src="images/1.webp"/>
+    </div>
+    <div class="hero-slide absolute inset-0 w-full h-full" data-index="2">
+      <img alt="" aria-hidden="true" class="hero-bg" src="images/5.webp"/>
+      <div class="hero-wash"></div>
+      <img alt="SHOPAHOLIC premium jewelry" class="hero-slide-img hero-fg" src="images/5.webp"/>
+    </div>
+  </div>
+  <!-- Overlay Link -->
+  <a aria-label="Shop new collection" class="absolute inset-0 z-10 cursor-pointer" href="shop.html"></a>
+  <!-- Text Overlay -->
+  <div class="absolute inset-0 z-20 flex flex-col justify-end md:justify-center px-6 sm:px-10 md:px-16 pb-16 md:pb-0 pointer-events-none">
+    <div class="max-w-lg text-white pointer-events-auto">
+      <div class="section-accent-line mb-4"></div>
+      <h3 class="font-serif text-2xl md:text-3xl italic text-white/80 mb-1 md:mb-2 fade-in">Newly</h3>
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl mb-3 md:mb-5 tracking-wider uppercase drop-shadow-lg fade-in">ARRIVED</h1>
+      <p class="text-[11px] sm:text-xs font-semibold text-white/80 mb-6 md:mb-8 uppercase tracking-[0.2em] fade-in">Fashion Jewelry — Made to Sparkle</p>
+      <a class="hero-cta" href="shop.html">Shop Now</a>
+    </div>
+  </div>
+  <!-- Slide Counter -->
+  <div class="absolute top-6 sm:top-8 left-6 sm:left-10 md:left-16 z-30 text-white font-serif tracking-widest text-xs sm:text-sm flex items-center gap-2">
+    <span class="hero-counter-current text-base sm:text-lg">01</span>
+    <span class="w-6 h-px bg-white/50"></span>
+    <span class="hero-counter-total">03</span>
+  </div>
+  <!-- Prev / Next Arrows -->
+  <button aria-label="Previous slide" class="hero-prev absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-accent hover:border-accent transition-colors backdrop-blur-sm">
+    <i class="fas fa-chevron-left text-sm"></i>
+  </button>
+  <button aria-label="Next slide" class="hero-next absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-accent hover:border-accent transition-colors backdrop-blur-sm">
+    <i class="fas fa-chevron-right text-sm"></i>
+  </button>
+  <!-- Thumbnail Rail -->
+  <div class="hero-thumbs absolute z-30 bottom-6 sm:bottom-8 right-4 sm:right-8 md:right-12 flex flex-row md:flex-col gap-3">
+    <button aria-label="View slide 1" class="hero-thumb active" data-index="0">
+      <img alt="Look 1" src="images/7.webp"/>
+    </button>
+    <button aria-label="View slide 2" class="hero-thumb" data-index="1">
+      <img alt="Look 2" src="images/1.webp"/>
+    </button>
+    <button aria-label="View slide 3" class="hero-thumb" data-index="2">
+      <img alt="Look 3" src="images/5.webp"/>
+    </button>
+  </div>
+  <!-- Progress Bar -->
+  <div class="absolute bottom-0 left-0 z-30 h-[3px] hero-progress" style="width:0%; background: var(--pink, #F055B2);"></div>
+</section>
+
+<!-- Grid Banners -->
+<section class="w-full p-2 sm:p-4 grid grid-cols-1 md:grid-cols-4 gap-2 sm:gap-4 bg-white">
+  <!-- Left Banner -->
+  <a class="md:col-span-1 relative bg-gray-50 h-[250px] sm:h-[350px] md:h-[480px] group overflow-hidden cursor-pointer flex flex-col justify-between items-center p-6 sm:p-8" href="shop.html">
+    <div class="z-10 text-center relative bg-white/95 backdrop-blur-md px-6 py-5 inline-block shadow-md border border-gray-100">
+      <h3 class="font-serif text-xl italic text-gray-400">The</h3>
+      <h2 class="font-serif text-3xl text-black uppercase tracking-wide">NECKLACES</h2>
+      <p class="text-[10px] font-semibold text-gray-500 uppercase tracking-widest mt-2 border-b border-gray-300 inline-block pb-1">Shop Collection</p>
+    </div>
+    <img alt="Necklaces collection" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply group-hover:scale-105 transition-transform duration-700" src="images/4.webp"/>
+  </a>
+  <!-- Middle Banner -->
+  <a class="md:col-span-2 relative bg-gray-50 h-[250px] sm:h-[350px] md:h-[480px] group overflow-hidden cursor-pointer p-6 sm:p-8 flex flex-col justify-end block" href="shop.html">
+    <img alt="Our Jewelry" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply group-hover:scale-105 transition-transform duration-700" src="images/7.webp"/>
+    <div class="z-10 bg-white/90 backdrop-blur-sm p-6 inline-block self-start shadow-sm">
+      <h2 class="font-serif text-3xl md:text-4xl text-black uppercase tracking-wide mb-1">OUR JEWELRY</h2>
+      <span class="text-[10px] font-semibold uppercase tracking-widest pb-0.5 group-hover:text-accent transition-colors" style="border-bottom:1px solid currentColor">Discover Now</span>
+    </div>
+  </a>
+  <!-- Right Banner -->
+  <a class="md:col-span-1 relative bg-gray-50 h-[250px] sm:h-[350px] md:h-[480px] group overflow-hidden cursor-pointer p-6 flex flex-col justify-end items-end text-right block" href="shop.html">
+    <img alt="New Arrivals" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply group-hover:scale-105 transition-transform duration-700" src="images/6.webp"/>
+    <div class="z-10 relative bg-white/80 backdrop-blur-sm p-4 inline-block shadow-sm mb-2">
+      <h3 class="font-serif text-lg italic text-gray-400">The</h3>
+      <h2 class="font-serif text-2xl text-black uppercase tracking-wide -mt-1 leading-tight">NEW<br/>ARRIVALS</h2>
+    </div>
+  </a>
+</section>
+
+<!-- Info Bar -->
+<section class="w-full bg-white border-y border-gray-100 py-6 md:py-8 px-4 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 lg:gap-20 text-[10px] md:text-xs font-bold tracking-widest uppercase">
+  <div class="info-item flex flex-row items-center space-x-4 text-black cursor-pointer transition-colors text-left w-full sm:w-auto justify-start sm:justify-center group">
+    <i class="info-icon fas fa-truck text-xl md:text-2xl text-gray-400 group-hover:text-accent transition-colors shrink-0 w-8 text-center"></i>
+    <span class="group-hover:text-accent transition-colors">Free National Delivery</span>
+  </div>
+  <div class="hidden md:block w-px h-8 bg-gray-200"></div>
+  <div class="info-item flex flex-row items-center space-x-4 text-black cursor-pointer transition-colors text-left w-full sm:w-auto justify-start sm:justify-center group">
+    <i class="info-icon fas fa-exchange-alt text-xl md:text-2xl text-gray-400 group-hover:text-accent transition-colors shrink-0 w-8 text-center"></i>
+    <span class="group-hover:text-accent transition-colors">Hassle Free Return &amp; Exchange 30 Days</span>
+  </div>
+  <div class="hidden lg:block w-px h-8 bg-gray-200"></div>
+  <div class="info-item flex flex-row items-center space-x-4 text-black cursor-pointer transition-colors text-left w-full sm:w-auto justify-start sm:justify-center group">
+    <i class="info-icon fas fa-shield-alt text-xl md:text-2xl text-gray-400 group-hover:text-accent transition-colors shrink-0 w-8 text-center"></i>
+    <span class="group-hover:text-accent transition-colors">Secure Checkout</span>
+  </div>
+</section>
+
+<!-- Trendy Jewelry -->
+<section class="w-full py-20 px-4 sm:px-8 bg-white text-center">
+  <div class="section-accent-line mx-auto"></div>
+  <h3 class="font-serif text-2xl italic text-gray-400 mb-2">Our Top</h3>
+  <h2 class="font-serif text-4xl text-black uppercase tracking-wide mb-12">Trendy Jewelry</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8" id="trendy-grid">
+    <!-- Injected by JS -->
+  </div>
+  <div class="mt-16">
+    <a class="inline-block border-b-2 border-black text-black font-bold uppercase tracking-widest text-xs pb-1 hover:text-accent hover:border-accent transition-colors" href="shop.html">View All Collection</a>
+  </div>
+</section>
+
+<!-- Marquee -->
+<section class="w-full py-20 overflow-hidden bg-white border-y border-gray-100 flex items-center">
+  <div class="marquee-container w-full">
+    <div class="marquee-content flex items-center space-x-16">
+      <div class="flex items-center space-x-16 text-6xl md:text-8xl font-serif uppercase tracking-wider whitespace-nowrap">
+        <span class="text-gray-800">Shine, Sparkle, Repeat</span>
+        <i class="fas fa-certificate text-3xl" style="color:var(--pink)"></i>
+        <span class="text-transparent" style="-webkit-text-stroke: 1.5px #F055B2;">The Jewelry Collection</span>
+        <i class="fas fa-certificate text-3xl" style="color:var(--pink)"></i>
+      </div>
+      <div class="flex items-center space-x-16 text-6xl md:text-8xl font-serif uppercase tracking-wider whitespace-nowrap">
+        <span class="text-gray-800">Shine, Sparkle, Repeat</span>
+        <i class="fas fa-certificate text-3xl" style="color:var(--pink)"></i>
+        <span class="text-transparent" style="-webkit-text-stroke: 1.5px #F055B2;">The Jewelry Collection</span>
+        <i class="fas fa-certificate text-3xl" style="color:var(--pink)"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Collection Gallery Slider -->
+<section class="w-full py-20 px-4 sm:px-8 bg-white text-center">
+  <div class="section-accent-line mx-auto"></div>
+  <h3 class="font-serif text-2xl italic text-gray-400 mb-2">Exclusive</h3>
+  <h2 class="font-serif text-4xl text-black uppercase tracking-wide mb-12">Collection Gallery</h2>
+  <div class="w-full overflow-hidden relative">
+    <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar space-x-4 pb-8 items-center max-w-7xl mx-auto" id="collection-slider">
+      <!-- Injected by JS -->
+    </div>
+    <p class="text-xs text-gray-400 mt-2 italic flex justify-center items-center gap-2">
+      <i class="fas fa-chevron-left text-[10px]"></i> Swipe to explore <i class="fas fa-chevron-right text-[10px]"></i>
+    </p>
+  </div>
+  <div class="mt-8">
+    <a class="inline-block border-b-2 border-black text-black font-bold uppercase tracking-widest text-xs pb-1 hover:text-accent hover:border-accent transition-colors" href="shop.html">Shop All Jewelry</a>
+  </div>
+</section>
+
+<!-- Customer Reviews -->
+<section class="w-full py-20 px-4 sm:px-8 bg-gray-50">
+  <div class="text-center mb-16">
+    <div class="section-accent-line mx-auto"></div>
+    <h2 class="font-serif text-3xl md:text-4xl text-black uppercase tracking-wide">Customer Reviews</h2>
+    <div class="w-16 h-0.5 bg-black mx-auto mt-6"></div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="bg-white p-10 rounded shadow-sm text-center">
+      <div class="flex justify-center mb-4 text-sm space-x-1" style="color:var(--pink)">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+      <h4 class="font-bold text-black uppercase tracking-wide mb-4">Great Quality</h4>
+      <p class="text-gray-600 text-sm mb-6 leading-relaxed">"The jewelry is absolutely gorgeous. Exactly as pictured and the finish feels so premium. I've been getting compliments non-stop. Highly recommended!"</p>
+      <p class="font-serif italic text-gray-800 text-lg">- Sana M.</p>
+    </div>
+    <div class="bg-white p-10 rounded shadow-md text-center transform md:-translate-y-4 review-featured">
+      <div class="flex justify-center mb-4 text-sm space-x-1" style="color:var(--pink)">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+      <h4 class="font-bold text-black uppercase tracking-wide mb-4">Absolutely Stunning</h4>
+      <p class="text-gray-600 text-sm mb-6 leading-relaxed">"Finally a store with real quality at fair prices. The finish is perfect and it hasn't tarnished. SHOPAHOLIC is my go-to for every occasion now."</p>
+      <p class="font-serif italic text-gray-800 text-lg">- Fatima R.</p>
+    </div>
+    <div class="bg-white p-10 rounded shadow-sm text-center">
+      <div class="flex justify-center mb-4 text-sm space-x-1" style="color:var(--pink)">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+      </div>
+      <h4 class="font-bold text-black uppercase tracking-wide mb-4">Fast Delivery</h4>
+      <p class="text-gray-600 text-sm mb-6 leading-relaxed">"Ordered on a Tuesday and it arrived by Thursday — beautifully packaged too. The piece looks even better in person. Will definitely order again!"</p>
+      <p class="font-serif italic text-gray-800 text-lg">- Ayesha K.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Style Community / Instagram Grid -->
+<section class="w-full py-20 text-center bg-white">
+  <div class="section-accent-line mx-auto"></div>
+  <h2 class="font-serif text-3xl md:text-4xl text-black uppercase tracking-wide mb-4">Be Part Of Our Style Community</h2>
+  <a class="font-medium text-sm mb-12 inline-block border-b border-gray-400 pb-0.5 hover:text-accent hover:border-accent transition-colors" href="#" style="color:#555">@shopaholic on Instagram</a>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-0 w-full max-w-full overflow-hidden mt-8">
+    <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-50">
+      <img alt="SHOPAHOLIC Instagram 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="images/4.webp"/>
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" style="background:rgba(233,30,140,0.35)">
+        <i class="fab fa-instagram text-white text-4xl transform scale-50 group-hover:scale-100 transition-transform duration-500"></i>
+      </div>
+    </div>
+    <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-50">
+      <img alt="SHOPAHOLIC Instagram 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="images/6.webp"/>
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" style="background:rgba(233,30,140,0.35)">
+        <i class="fab fa-instagram text-white text-4xl transform scale-50 group-hover:scale-100 transition-transform duration-500"></i>
+      </div>
+    </div>
+    <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-50">
+      <img alt="SHOPAHOLIC Instagram 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="images/10.webp"/>
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" style="background:rgba(233,30,140,0.35)">
+        <i class="fab fa-instagram text-white text-4xl transform scale-50 group-hover:scale-100 transition-transform duration-500"></i>
+      </div>
+    </div>
+    <div class="group relative aspect-square overflow-hidden cursor-pointer bg-gray-50">
+      <img alt="SHOPAHOLIC Instagram 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="images/3.webp"/>
+      <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" style="background:rgba(233,30,140,0.35)">
+        <i class="fab fa-instagram text-white text-4xl transform scale-50 group-hover:scale-100 transition-transform duration-500"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer w-full bg-white text-black border-t border-gray-200 pt-20 pb-8 px-4 sm:px-8">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
+    <div class="col-span-1 md:col-span-1">
+      <span class="flex items-center gap-3 mb-6"><img alt="Shopaholic" src="images/logo.png" style="height:56px;width:auto"/><span class="font-serif font-bold tracking-widest text-black text-2xl" style="letter-spacing:0.18em;">SHOPAHOLIC</span></span>
+      <p class="text-gray-400 text-sm mb-8 leading-relaxed pr-4">Your destination for fashion jewelry. Discover pieces that add a little sparkle to every occasion.</p>
+      <div class="flex space-x-4">
+        <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center transition-colors hover:border-accent hover:bg-accent" href="#"><i class="fab fa-facebook-f"></i></a>
+        <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center transition-colors hover:border-accent hover:bg-accent" href="#"><i class="fab fa-instagram"></i></a>
+        <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center transition-colors hover:border-accent hover:bg-accent" href="#"><i class="fab fa-tiktok"></i></a>
+        <a class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center transition-colors hover:border-accent hover:bg-accent" href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="font-serif text-xl uppercase tracking-wider mb-6">Quick Links</h4>
+      <ul class="space-y-4 text-sm text-gray-400">
+        <li><a class="hover:text-white hover:translate-x-1 inline-block transition-transform duration-300" href="#">About Us</a></li>
+        <li><a class="hover:text-white hover:translate-x-1 inline-block transition-transform duration-300" href="#">Contact Us</a></li>
+        <li><a class="hover:text-white hover:translate-x-1 inline-block transition-transform duration-300" href="#">Our Blogs</a></li>
+        <li><a class="hover:text-white hover:translate-x-1 inline-block transition-transform duration-300" href="#">FAQ's</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-serif text-xl uppercase tracking-wider mb-6">Customer Care</h4>
+      <ul class="space-y-4 text-sm text-gray-400">
+        <li><a class="hover:text-white hover:translate-x-1 inline-block transition-transform duration-300" href="#">Shipping Policy</a></li>
+        <li><a class="hover:text-white hover:translate-x-1 inline-block transition-transform duration-300" href="#">Returns &amp; Exchanges</a></li>
+        <li><a class="hover:text-white hover:translate-x-1 inline-block transition-transform duration-300" href="#">Track Order</a></li>
+        <li><a class="hover:text-white hover:translate-x-1 inline-block transition-transform duration-300" href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-serif text-xl uppercase tracking-wider mb-6">Newsletter</h4>
+      <p class="text-gray-400 text-sm mb-6 leading-relaxed">Subscribe to receive updates, exclusive deals, and new arrivals.</p>
+      <form class="flex flex-col space-y-4" onsubmit="event.preventDefault()">
+        <input class="bg-transparent border border-gray-700 px-4 py-3 outline-none text-sm text-white placeholder-gray-500 focus:border-white transition-colors" placeholder="Enter your email address" type="email"/>
+        <button class="footer-subscribe px-4 py-3 text-sm font-bold uppercase tracking-widest transition-colors" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-medium tracking-wide">
+    <p>© 2026 SHOPAHOLIC. ALL RIGHTS RESERVED.</p>
+    <div class="flex space-x-6 mt-6 md:mt-0 text-2xl">
+      <i class="fab fa-cc-visa hover:text-white transition-colors cursor-pointer"></i>
+      <i class="fab fa-cc-mastercard hover:text-white transition-colors cursor-pointer"></i>
+      <i class="fab fa-cc-paypal hover:text-white transition-colors cursor-pointer"></i>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button aria-label="Back to top" class="fixed bottom-6 right-6 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center shadow-xl z-50 opacity-0 pointer-events-none transition-all duration-300 hover:scale-110" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+</body>
+</html>
